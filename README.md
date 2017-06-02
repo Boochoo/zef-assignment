@@ -25,7 +25,7 @@
 	> When app had a scandic letters in its name the whole list got broken. This was due to our simple
 	> hack that we use to migrate old apps.
 
-### Best practices for coding with Angular 2
+### Best practices for coding with Angular
 
   - In short do not just produce code blindly, but also think of the readability of the code by structuring it sensibly, using enough spacing and using short but understandable variable / function names
 

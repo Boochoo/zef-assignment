@@ -43,7 +43,7 @@ Make an application that implements the functionality of the given design. You c
 
     https://material.angular.io/
 
-  - The application does not need to look exactly like the design, but it should have similar concept / layout / elements and provide the functionality of the checkout process. You can use the ngIf and click events to change between views if such things are needed (example provided in the code) or if you are more familiar with angular 2 project then you can use even the router and separate components for separate views etc.
+  - The application does not need to look exactly like the design, but it should have similar concept / layout / elements and provide the functionality of the checkout process. You can use the ngIf and click events to change between views if such things are needed (example provided in the code) or if you are more familiar with Angular project then you can use even the router and separate components for separate views etc.
 
   - Try to follow the coding guidelines and best practices that are mentioned in the README file. If you have setup your code editor correctly it should use the tslint.json and stylelint.json configuration file and provide
     coding style errors etc. for you.
@@ -90,7 +90,7 @@ Fork the repository to get started and to return the assignment make a Pull Requ
 
     https://material.angular.io/
 
-  - The application does not need to have any real functionality, i.e. the plain UI implementation is enough. You can use the ngIf and click events to change between views if such things are needed (example provided in the code). Or if you are more familiar with angular 2 project then you can use even the router and separate components for separate views etc.
+  - The application does not need to have any real functionality, i.e. the plain UI implementation is enough. You can use the ngIf and click events to change between views if such things are needed (example provided in the code). Or if you are more familiar with Angular project then you can use even the router and separate components for separate views etc.
 
   - Try to follow the coding guidelines and best practices that are mentioned in the README file. If you have setup your code editor correctly it should use the tslint.json and stylelint.json configuration file and provide coding style errors etc. for you.
 
