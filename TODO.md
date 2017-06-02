@@ -98,11 +98,13 @@ Fork the repository to get started and to return the assignment make a Pull Requ
 
 Make an application that implements the functionality of the given design. You can implement the UI with material components that resembles the components in the design, i.e. the visual appearance does not need to match the design just the functionality and general layout. 
 
-The application you are implementing is a PowerPoint like slide view with side panel controls. There can be slide groups and individual slides. You should pay attention to the efficiency of the implementation so that it can handle of large amount of slides and complex editing view even though in your implementation the editing view will be minimal.
+The application you are implementing is a PowerPoint like slide view with side panel controls. There can be slide groups and individual slides. Focus on the efficiency of the implementation and not the looks. The larger amount of slides and the more complex editing view it could handle the better.
 
 ##### Design for the app:
 
   Check the [design-1.png](https://github.com/zefoy/zef-assignment/blob/master/design-1.png), [design-2.png](https://github.com/zefoy/zef-assignment/blob/master/design-2.png) and [design-3.png](https://github.com/zefoy/zef-assignment/blob/master/design-3.png) images in the root of this repository.
+
+  Notice that the slides are called as questions in the designs, but you can call them what you like in your implementation.
 
 ##### Minimum requirements:
 
@@ -112,16 +114,16 @@ The application you are implementing is a PowerPoint like slide view with side p
 
   The right side edit area needs to be the same for all the tabs (So route only changes the left panel content and the right side stays as it is).
 
-  Questions on the right needs to be swipeable/scrollable with possibility to edit the question title (You need to use ngx-swiper-wrapper library for the right view).
+  Slides on the right editing view needs to be swipeable/scrollable with possibility to edit the slide title (You need to use ngx-swiper-wrapper library for the right view).
 
-  Question can be selected either from the left panel or from the right Swiper area, and both the panel and Swiper needs to reflect the active question (i.e. the question in the view on the right).
+  Slide can be selected either from the left panel or from the right Swiper area, and both the panel and Swiper needs to reflect the active slide (i.e. the slide in the view on the right).
 
-  The selected question key needs to be as route parameter so that the active question will stay active on page reload or when link is copied and opened in another browser tab.
+  The selecteds slide key needs to be as route parameter so that the active slide will stay active on page reload or when link is copied and opened in another browser tab.
 
-  The last card of each group needs to be add question to group card and the very last card of the right view needs to be add question card.
+  The last slide of each slide group needs to be slide with add to group action and the very last slide needs to be add new slide.
 
 ##### Optional functionality:
 
-  Add re-arranging of the questions in the left panel with DND (You can use ng2-dragula library or some other library of your choice).
+  Add re-arranging of the slides in the left panel with DND (You can use ng2-dragula library or some other library of your choice).
 
-  Add adding of questions in between of the questions in a way that if user hovers mouse for a 200ms in between the question an add question item would appear.
+  Add adding of slides in between of the slides in a way that if user hovers mouse in between the items on left panel an add slide item / group action would appear.
