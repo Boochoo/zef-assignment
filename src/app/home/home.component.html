@@ -1,0 +1,19 @@
+<div class="app" fxLayout="column" fxLayoutAlign="center center" fxFlex>
+  <div class="home-page--wrapper" >
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutWrap="wrap">
+      <h1 class="main-view--title">A perfect plan, for everyone.</h1>
+
+      <p class="main-view--subtitle">For detailed feature breakdown, view our pricing page </p>
+    </div>
+    <div class="nav-btn-container" fxLayout="row" fxLayoutAlign="center">
+      <a>
+        <button md-raised-button routerLink="/annual" routerLinkActive="active"> Annual</button>
+      </a>
+      <a>
+        <button md-raised-button routerLink="/monthly" routerLinkActive="active">Monthly</button>
+      </a>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+
+</div>

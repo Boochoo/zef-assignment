@@ -1,0 +1,212 @@
+@import "../styles/main.scss";
+
+.checkout-card.mdl-card {
+  width: 312px;
+  border-radius: $brd-rd-amt;
+
+  background-color: $lightlighter-grey;
+
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+.mdl-card > div {
+  padding-left: 24px;
+
+  &:nth-child(1),
+  &:nth-child(2),
+  &:nth-child(3),
+  &:nth-child(4),
+  &:nth-child(5) {
+    display: flex;
+    justify-content: flex-start;
+  }
+  &:nth-child(1) {
+    font-weight: 800;
+  }
+  &:nth-child(2) {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  &:nth-child(3) {
+    margin-bottom: 26px;
+  }
+
+  &:nth-child(4) {
+    border: none;
+    margin-top: -9px;
+    margin-bottom: 4px;
+
+    color: $darker-grey;
+  }
+
+  &:nth-child(5) {
+    width: 86%;
+    margin: 0 auto;
+    padding: 0;
+    border: none;
+
+    color: $black-text;
+    background: none;
+    text-align: start;
+    cursor: default;
+  }
+
+  &.checkout-details {
+    display: block;
+    transform: translateY(100%);
+
+    border-top: 1px solid $lightdark-grey;
+
+    line-height: 27px;
+    color: $light-grey;
+    cursor: pointer;
+  }
+
+  &.checkout-price {
+    span {
+      font-size: 32px;
+      margin-right: 7px;
+    }
+  }
+}
+
+.checkout-card-form {
+  @extend .checkout-card;
+  width: 600px !important;
+  flex: 2 1 0 !important;
+  height: 450px !important;
+  background: #fff !important;
+
+  .mdl-card__title-text {
+    margin-bottom: -10px;
+  }
+}
+
+.checkout-input--wrapper {
+  width: 500px;
+  margin: 0 auto;
+  padding: 40px;
+
+  .mdl-card__title-text {
+    text-align: start;
+  }
+
+  .option-selector--text {
+    text-align: start;
+  }
+
+  .input-row--wrapper {
+
+  }
+
+  .zip-option--selector {
+    width: 210px;
+  }
+  .option-selector--text {
+    width: 50%;
+    margin-right: 55px;
+  }
+
+  .has-error {
+    color: red;
+  }
+}
+
+.checkout-submit--button {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+
+  button {
+    width: 100%;
+    margin-top: 18px;
+    font-size: 16px;
+  }
+
+  .mat-fab, .mat-mini-fab, .mat-raised-button {
+    background: $blue;
+  }
+}
+
+.final-checkout--point {
+  height: 250px !important;
+  .mdl-card__title {
+    justify-content: center !important;
+    padding: 0;
+  }
+
+  .mdl-card__title-text {
+    font-weight: 100;
+    color: $lighter-dark;
+    text-align: center !important;
+  }
+
+  .checkout-submit--button {
+    margin-top: 10px;
+    button {
+      width: 80%;
+      height: 50px;
+      color: $lightlighter-grey;
+    }
+  }
+}
+
+.checkout-card > div {
+  text-align: center;
+  display: block;
+}
+
+.home-page--wrapper {
+  .active {
+    background-color: $black-text;
+    color: #fff;
+  }
+  .main-view--title, .main-view--subtitle {
+    font-weight: 400;
+    color: #545454;
+    text-align: center;
+  }
+
+  .main-view--subtitle {
+    margin-top: -13px;
+    margin-bottom: 40px;
+  }
+}
+
+.checkout-nav--container {
+  margin: 50px 10px 10px 0;
+  padding: 26px;
+  color: $darker-grey;
+
+  .checkout-phase--wrapper {
+    & > div {
+      margin-right: 15px;
+    }
+    a {
+      text-decoration: none;
+      color: $blue;
+    }
+
+    .checkout-phase--line {
+      width: 40px;
+      height: 3px;
+      background-color: $darker-grey;
+    }
+
+    .checkout-phase--maintitle {
+      color: $black-text;
+      margin-right: 200px;
+    }
+
+    .active {
+      background-color: $blue;
+    }
+    .activeColor {
+      color: $blue;
+    }
+  }
+}

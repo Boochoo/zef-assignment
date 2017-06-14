@@ -1,0 +1,171 @@
+<div class="order-comp--wrapper"
+     fxLayout="column" fxLayoutAlign="start stretch"
+     fxLayoutWrap="wrap" fxFlex>
+
+  <div class="nav-btn-container checkout-nav--container" fxLayout="column"
+       fxLayoutAlign="center center" fxFlex>
+    <div class="checkout-phase--wrapper"
+         fxLayout="row" fxLayoutAlign="start center" fxLayoutWrap="wrap">
+      <div class="checkout-phase--maintitle" fxLayout="row" fxLayoutAlign="start center"><h3>Checkout</h3></div>
+      <div class="progress-bar--wrapper"
+           fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+        <div class="checkout-phase--title"><a routerLink="/annual"> Choose plan </a></div>
+        <div class="checkout-phase--line active"></div>
+        <div class="checkout-phase--title activeColor">Company info</div>
+        <div class="checkout-phase--line"
+             [class.active]="stepOne"></div>
+        <div class="checkout-phase--title"
+             [class.activeColor]="stepOne">Payment method
+        </div>
+        <div class="checkout-phase--line"
+             [class.active]="stepTwo"></div>
+        <div class="checkout-phase--title"
+             [class.activeColor]="stepTwo">Pay
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="app" fxLayout="row" fxLayoutAlign="center stretch" fxFlex>
+
+    <div fxLayout="row"
+         fxLayoutWrap="wrap" fxLayoutAlign="start stretch">
+
+      <div class="mdl-card mdl-shadow--2dp checkout-card"
+           fxFlexOrder fxFlex.sm="100%" fxFlex.xs="100%"
+           fxFlexOrder.sm="2">
+
+        <div class="mdl-card__title mdl-card--expand">
+          <p class="mdl-card__title-text">Shopping Cart</p>
+        </div>
+        <div class="mdl-card__supporting-text checkout-price">
+          <span>{{plan?.type}}</span>plan
+        </div>
+        <div class="mdl-card__supporting-text checkout-survey">{{plan?.surveyAmt}}</div>
+        <div class="mdl-card__supporting-text "><h3>{{plan?.price}}</h3></div>
+        <div class="mdl-card__actions mdl-card--border plan-details">
+          To be billed annually <br/>
+          After 10% annual billing account. <br/>
+          Annual Savings $1.
+        </div>
+        <div class="mdl-card__supporting-text checkout-details">MORE DETAILS</div>
+      </div>
+
+      <div class="mdl-card mdl-shadow--2dp checkout-card-form"
+           fxFlex.sm="100%" fxFlex.xs="100%"
+           fxFlexOrder fxFlexOrder.sm="1"
+           *ngIf="checkoutMode">
+
+        <div class="mdl-card__title mdl-card--expand">
+          <p class="mdl-card__title-text">Verify company info</p>
+        </div>
+        <form novalidate
+              (ngSubmit)="addPost(rForm.value)"
+              [formGroup]="rForm">
+          <div class="checkout-input--wrapper" fxLayout="column" fxLayoutAlign="start stretch" fxLayoutWrap="wrap">
+            <md-input-container fxFlex>
+              <input mdInput placeholder="Name" name="name" value="" type="text" required
+                     formControlName="name">
+            </md-input-container>
+            <div class="input-row--wrapper" fxLayout="row" fxLayoutAlign="center center">
+              <md-select placeholder="Country" name="countries" class="option-selector--text" required
+                         [(ngModel)]="selectedValue" formControlName="countries">
+                <md-option
+                  *ngFor="let country of countries" [value]="country.value">{{country.viewValue}}
+                </md-option>
+              </md-select>
+              <md-input-container class="zip-option--selector">
+                <input mdInput placeholder="Zip" name="zip" value="" formControlName="zip">
+              </md-input-container>
+            </div>
+            <md-input-container>
+              <input mdInput placeholder="City" name="city" value="" type="text" required formControlName="city">
+            </md-input-container>
+            <div class="checkout-submit--button">
+              <button md-raised-button type="submit" [disabled]="!rForm.valid" (click)="placeOrder()">Add Payment Method
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="mdl-card mdl-shadow--2dp checkout-card-form"
+           fxFlex.sm="100%" fxFlex.xs="100%"
+           fxFlexOrder fxFlexOrder.sm="1"
+           *ngIf="checkoutFinalMode">
+
+        <div class="mdl-card__title mdl-card--expand">
+          <p class="mdl-card__title-text">Add a payment method</p>
+        </div>
+        <form novalidate
+              (ngSubmit)="addCardPost(cardForm.value)"
+              [formGroup]="cardForm">
+          <div class="checkout-input--wrapper" fxLayout="column" fxLayoutAlign="start stretch" fxLayoutWrap="wrap">
+            <md-input-container fxFlex>
+              <input mdInput placeholder="Name on the card" name="cardName" value="" type="text" required
+                     formControlName="cardName">
+            </md-input-container>
+
+            <md-input-container fxFlex>
+              <input mdInput placeholder="Card number" name="cardNumber" value="" type="number" required
+                     formControlName="cardNumber" [maxLength]="cardNumberLength">
+            </md-input-container>
+            <div class="input-row--wrapper" fxLayout="row" fxLayoutAlign="center center">
+              <md-select placeholder="Expiry mm" name="expiry" class="option-selector--text" required
+                >
+                <md-option
+                  *ngFor="let month of months" [value]="month.value">
+                  {{month.value}}
+                </md-option>
+              </md-select>
+              <md-select placeholder="Expiry yyyy" name="year" class="option-selector--text" required>
+                <md-option
+                  *ngFor="let year of years" [value]="year.value">
+                  {{year.value}}
+                </md-option>
+              </md-select>
+              <md-input-container class="zip-option--selector">
+                <input mdInput placeholder="CVC" type="number" name="cvc" value="" required maxlength="3">
+              </md-input-container>
+            </div>
+            <div class="input-row--wrapper" fxLayout="row" fxLayoutAlign="center center">
+
+              <md-select placeholder="Country" name="cardCountries" class="option-selector--text" required
+                         [(ngModel)]="selectedValue" formControlName="cardCountries">
+                <md-option
+                  *ngFor="let country of countries" [value]="country.value">{{country.viewValue}}
+                </md-option>
+              </md-select>
+
+              <md-input-container class="zip-option--selector">
+                <input mdInput placeholder="Zip" name="cardZip" value="" required
+                       formControlName="cardZip">
+              </md-input-container>
+            </div>
+            <div class="checkout-submit--button">
+              <button md-raised-button type="submit" [disabled]="!cardForm.valid" (click)="placeFinalOrder()">Review
+                order
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="mdl-card mdl-shadow--2dp checkout-card-form final-checkout--point"
+           fxFlex.sm="100%" fxFlex.xs="100%"
+           fxFlexOrder fxFlexOrder.sm="1"
+           *ngIf="checkoutModeFinal">
+
+        <div class="checkout-input--wrapper" fxLayout="column" fxLayoutAlign="center stretch" fxLayoutWrap="wrap">
+
+          <div class="mdl-card__title mdl-card--expand">
+            <h1 class="mdl-card__title-text">Total Billed $205</h1>
+          </div>
+          <div class="checkout-submit--button">
+            <button md-raised-button type="submit" [disabled]="!isValidForm()">Confirm Payment</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

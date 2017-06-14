@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['../assets/styles/main.scss' , './app.component.scss']
 })
 export class AppComponent {
-  public view = 'default';
-  public plan = 'monthly';
 
-  public title = 'ZEF Assignment';
+  constructor() {}
 
-  public company = 'Untitled';
 }

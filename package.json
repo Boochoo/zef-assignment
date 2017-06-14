@@ -44,10 +44,10 @@
     "karma-jasmine-html-reporter": "~0.2.0",
     "node-sass": "~3.8.0",
     "protractor": "~5.1.0",
-    "stylelint": "~7.10.0",
+    "stylelint": "^7.10.1",
     "stylelint-config-standard": "~16.0.0",
     "ts-node": "~2.0.0",
-    "tslint": "~5.1.0",
+    "tslint": "^5.4.2",
     "typescript": "~2.2.0"
   }
 }

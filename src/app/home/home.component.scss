@@ -1,0 +1,44 @@
+@import "../styles/main.scss";
+
+.home-page--wrapper {
+  .active {
+    color: #fff;
+    background-color: $black-text;
+  }
+  .main-view--title, .main-view--subtitle {
+    color: #545454;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .main-view--subtitle {
+    margin-top: -13px;
+    margin-bottom: 40px;
+  }
+}
+
+.checkout-nav--container {
+  margin: 50px 10px 0 0;
+  color: $darker-grey;
+
+  .checkout-phase--wrapper {
+    & > div {
+      margin-right: 15px;
+    }
+    a {
+      text-decoration: none;
+      color: $blue;
+    }
+
+    .checkout-phase--line {
+      width: 40px;
+      height: 3px;
+      background-color: $darker-grey;
+    }
+
+    .checkout-phase--maintitle {
+      margin-right: 340px;
+      color: $black-text;
+    }
+  }
+}

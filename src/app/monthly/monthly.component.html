@@ -1,0 +1,28 @@
+<div fxLayout="row" fxLayout.lt-sm="column"
+     fxLayoutWrap="wrap"
+     fxLayoutAlign="center stretch">
+
+  <div class="mdl-card mdl-shadow--2dp checkout-card"
+       [fxFlex.md]="regularSize" fxFlex="1 1 22%"
+       [fxFlex.sm]="regularSize"
+       *ngFor="let plan of plans">
+
+    <div class="mdl-card__title mdl-card--expand">
+      <h3 class="mdl-card__title-text">{{plan?.type}}</h3>
+    </div>
+    <div class="mdl-card__supporting-text checkout-price"><h1>{{plan?.price}}</h1></div>
+
+    <div class="mdl-card__supporting-text checkout-survey">{{plan?.surveyAmt}}</div>
+    <div class="mdl-card__supporting-text checkout-details">MORE DETAILS</div>
+    <div class="mdl-card__actions mdl-card--border checkout-plan">
+      <button md-raised-button class="md-raised md-primary"
+              [style.backgroundColor]="plan?.bgcolor"
+              [disabled]="selectedPlan == plan.type" (click)="placeOrder()"
+              routerLink="/order/{{plan?.id}}/monthly">
+        {{plan?.plan}}
+      </button>
+
+    </div>
+    <div class="checkout-more--option">{{plan?.moreOption}}</div>
+  </div>
+</div>

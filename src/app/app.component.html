@@ -1,36 +1,6 @@
-<div *ngIf="view === 'default'" class="app" fxLayout="column" fxLayoutAlign="center stretch">
-  <div class="title" fxLayout="row" fxLayoutAlign="center center">
-    {{title}}
-  </div>
+<button md-mini-fab fxLayoutAlign="center" fxLayout="row">
+  <md-icon>X</md-icon>
+</button>
 
-  <div class="content" fxLayout="column" fxLayoutAlign="center center" fxFlex>
-    Price: {{plan === 'monthly' ? 10 : 5}}
-    <br>
-    <br>
+<router-outlet></router-outlet>
 
-    <button md-raised-button (click)="plan = 'annual'">Annual pricing</button>
-    <br>
-    <button md-raised-button (click)="view = 'company-info'">Company info</button>
-  </div>
-</div>
-
-<div *ngIf="view === 'company-info'" class="app" fxLayout="column" fxLayoutAlign="center stretch">
-  <div class="title" fxLayout="row" fxLayoutAlign="center center">
-    {{company}} - Company info
-  </div>
-
-  <div class="content" fxLayout="column" fxLayoutAlign="center center" fxFlex>
-    <md-card>
-      <md-card-header>
-        <md-card-title>Information</md-card-title>
-        <md-card-subtitle>Account</md-card-subtitle>
-      </md-card-header>
-
-      <md-card-content>
-        <md-input-container>
-          <input md-input placeholder="Company name..." [(ngModel)]="company"/>
-        </md-input-container>
-      </md-card-content>
-    </md-card>
-  </div>
-</div>
