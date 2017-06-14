@@ -55,35 +55,21 @@ export class OrderComponent implements OnInit {
     {value: 'iceland', viewValue: 'Iceland'}
   ];
 
-  months = [
-    {value: '01', name: 'Jan'},
-    {value: '02', name: 'Feb'},
-    {value: '03', name: 'Mar'},
-    {value: '04', name: 'Apr'},
-    {value: '05', name: 'May'},
-    {value: '06', name: 'Jun'},
-    {value: '07', name: 'Jul'},
-    {value: '08', name: 'Aug'},
-    {value: '09', name: 'Sep'},
-    {value: '10', name: 'Oct'},
-    {value: '11', name: 'Nov'},
-    {value: '12', name: 'Dec'}
+  expiry = [
+    {month: '01', year: '2017'},
+    {month: '02', year: '2018'},
+    {month: '03', year: '2019'},
+    {month: '04', year: '2020'},
+    {month: '05', year: '2021'},
+    {month: '06', year: '2022'},
+    {month: '07', year: '2023'},
+    {month: '08', year: '2024'},
+    {month: '09', year: '2025'},
+    {month: '10', year: '2026'},
+    {month: '11', year: '2027'},
+    {month: '12', year: '2028'}
   ];
 
-  years = [
-    {value: '2017'},
-    {value: '2018'},
-    {value: '2019'},
-    {value: '2020'},
-    {value: '2021'},
-    {value: '2022'},
-    {value: '2023'},
-    {value: '2024'},
-    {value: '2025'},
-    {value: '2026'},
-    {value: '2027'},
-    {value: '2028'}
-  ];
 
   constructor(private planService:PlanService, private route:ActivatedRoute,
               private fb:FormBuilder) {

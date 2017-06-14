@@ -17,7 +17,7 @@
     <div class="mdl-card__actions mdl-card--border checkout-plan">
       <button md-raised-button class="md-raised md-primary"
               [style.backgroundColor]="plan?.bgcolor"
-              [disabled]="selectedPlan == plan.type" (click)="placeOrder()"
+              [disabled]="selectedPlan == plan.type"
               routerLink="/order/{{plan?.id}}/annually">
         {{plan?.plan}}
       </button>

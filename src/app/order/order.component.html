@@ -113,14 +113,14 @@
               <md-select placeholder="Expiry mm" name="expiry" class="option-selector--text" required
                 >
                 <md-option
-                  *ngFor="let month of months" [value]="month.value">
-                  {{month.value}}
+                  *ngFor="let exp of expiry" [value]="exp.month">
+                  {{exp.month}}
                 </md-option>
               </md-select>
               <md-select placeholder="Expiry yyyy" name="year" class="option-selector--text" required>
                 <md-option
-                  *ngFor="let year of years" [value]="year.value">
-                  {{year.value}}
+                  *ngFor="let exp of expiry" [value]="exp.year">
+                  {{exp.year}}
                 </md-option>
               </md-select>
               <md-input-container class="zip-option--selector">
