@@ -15,7 +15,6 @@ import { HomeComponent } from './home/home.component';
 import { AnnualComponent } from './annual/annual.component';
 import { OrderComponent } from './order/order.component';
 import { MonthlyComponent } from './monthly/monthly.component';
-import { PlanComponent } from './shared/models/plan/plan.component';
 
 import { PlanService } from './shared/plan.service'
 
@@ -55,7 +54,6 @@ const routes:Routes = [
     HomeComponent,
     AnnualComponent,
     OrderComponent,
-    PlanComponent,
     MonthlyComponent
   ],
   imports: [
